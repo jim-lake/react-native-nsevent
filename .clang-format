@@ -1,11 +1,12 @@
-﻿---
-BasedOnStyle: Chromium
-BinPackArguments: 'false'
-ColumnLimit: '120'
-IndentWidth: '4'
-ObjCBlockIndentWidth: '4'
-ObjCSpaceBeforeProtocolList: 'false'
-PointerAlignment: Right
-UseTab: Never
+# clang format yaml
+---
+Language: Cpp
+InsertBraces: true
 
-...
+---
+Language: CSharp
+InsertBraces: true
+
+---
+Language: ObjC
+InsertBraces: true
