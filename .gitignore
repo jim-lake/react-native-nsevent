@@ -1,0 +1,13 @@
+node_modules/
+lib/
+*.xcworkspace
+Pods/
+build/
+DerivedData/
+example/macos/Pods/
+example/macos/build/
+example/ios/Pods/
+example/ios/build/
+.DS_Store
+*.xcuserstate
+xcuserdata/

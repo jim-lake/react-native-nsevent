@@ -1,0 +1,9 @@
+node_modules/
+lib/
+build/
+Pods/
+DerivedData/
+package-lock.json
+*.mm
+*.cpp
+*.h

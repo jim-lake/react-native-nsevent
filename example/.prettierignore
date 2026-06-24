@@ -1,0 +1,8 @@
+node_modules/
+build/
+Pods/
+DerivedData/
+*.jsbundle
+*.mm
+*.cpp
+*.h
