@@ -10,7 +10,7 @@
 + (void)load {
   facebook::react::registerCxxModuleToGlobalModuleMap(
       "RNNSEvent", [](std::shared_ptr<facebook::react::CallInvoker> jsInvoker) {
-        return std::make_shared<facebook::react::RNNSEventModule>(
+        return std::make_shared<facebook::react::RNNSEvent>(
             std::move(jsInvoker));
       });
 }

@@ -1,17 +1,22 @@
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
 
 export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: ['**/*.js'],
-    languageOptions: {
-      globals: { module: 'readonly', require: 'readonly', __dirname: 'readonly' },
-    },
+    files: ['**/*.{ts,tsx,js,jsx}'],
+    plugins: { react, 'react-hooks': reactHooks },
     rules: {
-      '@typescript-eslint/no-require-imports': 'off',
+      ...reactHooks.configs.recommended.rules,
+      'react/react-in-jsx-scope': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      'curly': 'error',
     },
+    settings: { react: { version: 'detect' } },
   },
-  { ignores: ['node_modules/', 'macos/', 'ios/', 'android/', 'build/'] },
+  { ignores: ['macos/', 'build/', 'node_modules/', '*.config.js', '.prettierrc.js'] },
 ];

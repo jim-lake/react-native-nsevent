@@ -10,16 +10,13 @@ export default [
     },
   },
   {
-    files: ['__tests__/**/*.ts'],
+    files: ['**/*.js'],
     languageOptions: {
-      globals: { describe: 'readonly', it: 'readonly', beforeAll: 'readonly', afterAll: 'readonly', expect: 'readonly', setTimeout: 'readonly' },
-    },
-    rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
+      globals: { module: 'readonly', require: 'readonly' },
     },
   },
   {
-    files: ['src/NativeRNNSEvent.ts'],
+    files: ['spec/NativeNSEvent.ts'],
     rules: {
       '@typescript-eslint/no-wrapper-object-types': 'off',
     },

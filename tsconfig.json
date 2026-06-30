@@ -9,12 +9,12 @@
     "declaration": true,
     "outDir": "lib",
     "rootDir": ".",
-    "types": ["jest", "node"],
+    "types": [],
     "skipLibCheck": true,
     "paths": {
       "react-native-nsevent": ["./src/index"]
     },
     "baseUrl": "."
   },
-  "include": ["src/", "__tests__/", "__mocks__/"]
+  "include": ["spec/", "src/"]
 }

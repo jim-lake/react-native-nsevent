@@ -1,22 +1,15 @@
-import NativeRNNSEvent from './NativeRNNSEvent';
+import { nativeModule } from '../spec/NativeNSEvent';
+import type { Spec } from '../spec/NativeNSEvent';
+export type * from '../spec/NativeNSEvent';
 
-export type NSEventEvent =
-  | {
-      type: 'keyDown' | 'keyUp' | 'flagsChanged';
-      keyCode: number;
-      shift: boolean;
-      control: boolean;
-      option: boolean;
-      command: boolean;
-      capsLock: boolean;
-      function: boolean;
-    }
-  | { type: 'mouseDown' | 'mouseUp'; button: number; x: number; y: number }
-  | { type: 'scroll'; deltaX: number; deltaY: number };
+export interface PublicSpec extends Omit<Spec, '_getMouseMoveDeltaAndReset'> {
+  getMouseMoveDeltaAndReset(deltas: Int32Array): void;
+}
 
-export const registerEventCallback = NativeRNNSEvent.registerEventCallback as (
-  callback: ((event: NSEventEvent) => void) | null
-) => void;
+const exportedModule = nativeModule as unknown as PublicSpec;
 
-export const { startCapture, stopCapture, getMouseAndReset, isCaptureActive } =
-  NativeRNNSEvent;
+exportedModule.getMouseMoveDeltaAndReset = (deltas: Int32Array) => {
+  nativeModule._getMouseMoveDeltaAndReset(deltas.buffer);
+};
+
+export default exportedModule;
