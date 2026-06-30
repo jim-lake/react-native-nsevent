@@ -9,7 +9,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jim-lake/react-native-nsevent.git"
+    "url": "git+https://github.com/jim-lake/react-native-nsevent.git"
   },
   "codegenConfig": {
     "name": "RNNSEventSpec",
