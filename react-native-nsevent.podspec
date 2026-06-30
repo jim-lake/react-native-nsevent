@@ -6,10 +6,10 @@ Pod::Spec.new do |s|
   s.name         = "react-native-nsevent"
   s.version      = package["version"]
   s.summary      = package["description"]
-  s.homepage     = "https://github.com/user/react-native-nsevent"
+  s.homepage     = "https://github.com/jim-lake/react-native-nsevent"
   s.license      = package["license"]
-  s.author       = "Author"
-  s.source       = { :git => "https://github.com/user/react-native-nsevent.git", :tag => s.version }
+  s.author       = "https://github.com/jim-lake"
+  s.source       = { :git => "https://github.com/jim-lake/react-native-nsevent.git", :tag => s.version }
 
   s.osx.deployment_target = "11.0"
 
